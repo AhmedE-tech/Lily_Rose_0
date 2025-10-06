@@ -3,13 +3,13 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
-  webpack: (config) => {
-    config.resolve.fallback = {
-      ...config.resolve.fallback,
-      fs: false,
-    };
-    return config;
+  typescript: {
+    ignoreBuildErrors: false,
   },
+  eslint: {
+    ignoreDuringBuilds: false,
+  },
+  output: 'standalone', // Better for production
 }
 
 module.exports = nextConfig
